@@ -1,5 +1,3 @@
-
-
 import subprocess
 import threading
 import PySimpleGUI as sg
@@ -48,7 +46,17 @@ while True:
         type = values["-TYPE-"]
 
         command = f"npc.exe -server={address}:{port} -vkey={vkey} -type={type}"
-        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, bufsize=1)
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+        process = subprocess.Popen(
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            bufsize=1,
+            startupinfo=startupinfo,
+            creationflags=subprocess.CREATE_NO_WINDOW
+        )
 
         # 创建线程读取子进程输出并传递给GUI线程显示
         output_thread = threading.Thread(target=read_output, args=(process, output_element), daemon=True)
