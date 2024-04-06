@@ -10,3 +10,6 @@ pyinstaller --onefile --hidden-import PySimpleGUI main.py --name "NPS内网穿�
 然后将 npc.exe 文件复制到 dist 目录下即可。
 
 nps/npc 版本为 0.26.0，可自行搜索下载。
+
+
+![](http://img.upy.qiaoyukeji.cn/2024/04/06/20240406214012.png)
