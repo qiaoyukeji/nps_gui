@@ -11,5 +11,9 @@ pyinstaller --onefile --hidden-import PySimpleGUI main.py --name "NPS内网穿�
 
 nps/npc 版本为 0.26.0，可自行搜索下载。
 
+---
+
+后续内容更新于：https://gitee.com/qiaoyukeji/nps_gui
+
 
 ![](http://img.upy.qiaoyukeji.cn/2024/04/06/20240406214012.png)
